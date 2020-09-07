@@ -28,7 +28,8 @@ class Order < ApplicationRecord
 
   def search_data
     {
-      order_number: number
+      order_number: number,
+      state: state
     }
   end
 end
