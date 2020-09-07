@@ -1,4 +1,7 @@
 class Order < ApplicationRecord
+
+  searchkick
+
   BUILDING = "building"
   ARRIVED = "arrived"
   CANCELED = "canceled"

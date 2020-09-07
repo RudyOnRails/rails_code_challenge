@@ -1,0 +1,13 @@
+=paginate @orders
+
+%table.table
+  %th order #
+  %th state
+  %th email
+  -@orders.each do |order|
+    %tr
+      %td= order.number
+      %td= order.state
+      %td= order.user.email
+      
+=paginate @orders
