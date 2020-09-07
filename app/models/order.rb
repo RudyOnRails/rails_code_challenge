@@ -25,4 +25,10 @@ class Order < ApplicationRecord
   def to_param
     number
   end
+
+  def search_data
+    {
+      order_number: number
+    }
+  end
 end

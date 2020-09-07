@@ -1,3 +1,9 @@
+
+= form_with(url: "/orders", method: "get") do
+  = label_tag(:q, "Search Orders:")
+  = text_field_tag(:q)
+  = submit_tag("Search")
+
 =paginate @orders
 
 %table.table
