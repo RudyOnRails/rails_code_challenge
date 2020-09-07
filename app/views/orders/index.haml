@@ -9,11 +9,13 @@
 %table.table
   %th order #
   %th state
+  %th total
   %th email
   -@orders.each do |order|
     %tr
       %td= order.number
       %td= order.state
+      %td= "$#{number_with_precision(order.total, precision: 2)}"
       %td= order.user.email
       
 =paginate @orders

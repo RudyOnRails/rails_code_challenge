@@ -30,7 +30,8 @@ class Order < ApplicationRecord
     {
       order_number: number,
       state: state,
-      email: user.email
+      email: user.email,
+      total: total.to_s,
     }
   end
 end
