@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :find_order!, only: :show
 
   def index
-    params[:q] = "*" if params[:q].empty?
+    params[:q] = "*" unless params[:q].present?
     @orders = Order.search(params[:q], page: params[:page], per_page: 10)
   end
 
