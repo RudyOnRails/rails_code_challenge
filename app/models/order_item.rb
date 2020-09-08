@@ -1,3 +1,5 @@
+require 'csv'
+
 class OrderItem < ApplicationRecord
   SOLD = "sold"
   RETURNED = "returned"
@@ -22,4 +24,18 @@ class OrderItem < ApplicationRecord
   belongs_to :order
   belongs_to :source,
              polymorphic: true
+
+  def self.to_csv
+    attributes = %i[email number_of_items total_revenue]
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |order_item|
+        csv << [order_item.order.user.email,
+                order_item.order.order_items.count,
+                order_item.order.total]
+      end
+    end
+  end
 end

@@ -1,0 +1,5 @@
+%h2 Coupons
+
+=form_with(url: "/reports/coupon_users", method: "get") do
+  =select("coupon", "id", Coupon.all.map { |c| [ c.name, c.id ] })
+  =submit_tag("Go!")
