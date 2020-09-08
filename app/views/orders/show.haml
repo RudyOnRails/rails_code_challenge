@@ -1,0 +1,31 @@
+%h1= @order.number
+
+%h2= @order.address.line1
+%h2= @order.address.line2
+
+%h2= @order.user.name
+
+%h3 Order Items
+
+%table.table
+  %th quantity
+  %th price
+  %th state
+  -@order.order_items.each do |order_item|
+    %tr
+      %td= order_item.quantity
+      %td= "$#{number_with_precision(order_item.price, precision: 2)}"
+      %td= order_item.state
+
+%h3 Payments
+
+%table.table
+  %th amount
+  %th state
+  %th type
+  -@order.payments.each do |payment|
+    %tr
+      %td= "$#{number_with_precision(payment.amount, precision: 2)}"
+      %td= payment.state
+      %td= payment.payment_type
+      

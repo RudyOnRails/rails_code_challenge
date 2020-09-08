@@ -11,4 +11,12 @@ class Address < ApplicationRecord
   belongs_to :user
 
   has_many   :orders
+
+  def line1
+    address1
+  end
+    
+  def line2
+    "#{city}, #{state}  #{zipcode}"
+  end
 end
