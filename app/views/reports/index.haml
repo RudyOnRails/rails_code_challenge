@@ -1,5 +1,11 @@
-%h2 Coupons
+%h2 Coupon Users
 
 =form_with(url: "/reports/coupon_users", method: "get") do
-  =select("coupon", "id", Coupon.all.map { |c| [ c.name, c.id ] })
+  =select("coupon", "id", Coupon.all.map { |c| [ c.name, c.id ] }, required: true)
+  =submit_tag("Go!")
+
+%h2 Sales By Product
+=form_with(url: "/reports/sales_by_product", method: "get") do
+  = date_field("range", "begin", required: true)
+  = date_field("range", "end", required: true)
   =submit_tag("Go!")

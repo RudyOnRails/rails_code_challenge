@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   resources :reports, only: :index do
     get :coupon_users, on: :collection, defaults: { format: 'csv' }
+    get :sales_by_product, on: :collection, defaults: { format: 'csv' }
   end
 end
