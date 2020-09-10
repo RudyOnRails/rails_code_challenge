@@ -30,6 +30,7 @@ class Product < ApplicationRecord
   has_many :order_items,
            as: :source
 
+  scope :sales_by_date, ->(date_range) { joins(:order_items).where(order_items: { state: "sold", created_at: date_range }).distinct }
 
   def self.to_csv
     attributes = %i[name sold_count revenue]
