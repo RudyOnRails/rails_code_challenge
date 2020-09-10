@@ -3,11 +3,11 @@
 one:
   quantity: 1
   price: 9.99
-  order: 
+  order: one
   source: 
 
 two:
   quantity: 1
   price: 9.99
-  order: 
+  order: two
   source: 

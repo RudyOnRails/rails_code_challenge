@@ -2,6 +2,8 @@
 
 one:
   name: MyString
+  email: Faker::Internet.safe_email
 
 two:
   name: MyString
+  email: Faker::Internet.safe_email

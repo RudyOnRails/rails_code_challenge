@@ -6,8 +6,9 @@ one:
   building_at: 2020-06-01 12:18:20
   canceled_at: 2020-06-01 12:18:20
   arrived_at: 2020-06-01 12:18:20
-  user: 
-  address: 
+  user: one
+  address:
+  number: 1
 
 two:
   state: MyString
@@ -15,5 +16,6 @@ two:
   building_at: 2020-06-01 12:18:20
   canceled_at: 2020-06-01 12:18:20
   arrived_at: 2020-06-01 12:18:20
-  user: 
-  address: 
+  user: two
+  address:
+  number: 2
